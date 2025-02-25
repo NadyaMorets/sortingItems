@@ -27,6 +27,7 @@
     <script>
       vkBridge.send('VKWebAppInit');
     </script>
+    
     <script>
 
       var container = document.querySelector("#unity-container");
@@ -61,11 +62,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/WebGL.loader.js";
+      var loaderUrl = buildUrl + "/VKMiniApps.loader.js";
       var config = {
-        dataUrl: buildUrl + "/WebGL.data",
-        frameworkUrl: buildUrl + "/WebGL.framework.js",
-        codeUrl: buildUrl + "/WebGL.wasm",
+        dataUrl: buildUrl + "/VKMiniApps.data",
+        frameworkUrl: buildUrl + "/VKMiniApps.framework.js",
+        codeUrl: buildUrl + "/VKMiniApps.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "VKMiniApps",
