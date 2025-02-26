@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
@@ -27,7 +29,28 @@
     <script>
       vkBridge.send('VKWebAppInit');
     </script>
-    
+<script>
+  vkBridge.send('VKWebAppInit')
+    .then(() => console.log('VK Bridge initialized!'))
+    .catch((error) => console.error('VK Bridge error:', error));
+</script>
+<script>
+  // Проверка, запущено ли приложение внутри ВКонтакте
+  function isVK() {
+    return navigator.userAgent.includes('VK');
+  }
+
+  // Инициализация приложения
+  if (isVK()) {
+    // Если приложение запущено внутри ВКонтакте, инициализируем VK Bridge
+    vkBridge.send('VKWebAppInit')
+      .then(() => console.log('VK Bridge initialized!'))
+      .catch((error) => console.error('VK Bridge error:', error));
+  } else {
+    // Если приложение запущено вне ВКонтакте, просто запускаем игру
+    console.log('Приложение запущено вне ВКонтакте');
+  }
+</script>
     <script>
 
       var container = document.querySelector("#unity-container");
